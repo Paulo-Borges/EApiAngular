@@ -1,1 +1,17 @@
-<p>login works!</p>
+<main class="">
+    <form class="" [formGroup]="loginForm">
+        <div>
+     <div>
+                <input class="" placeholder="email" formControlName="email" />
+            </div>
+
+            <!-- Exibe a mensagem de erro APENAS se o campo foi tocado/sujo e o erro 'required' for verdadeiro -->
+             
+            @if (loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched) {
+                <div>
+                    <span style="color: red;">O campo é obrigatório.</span>
+                </div>
+            }
+        </div>
+    </form>
+</main>
